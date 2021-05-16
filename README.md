@@ -1,3 +1,7 @@
+# start the ssh-agent in the background
+eval `ssh-agent -s`
+
+
 # AMWAHUI
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0.
