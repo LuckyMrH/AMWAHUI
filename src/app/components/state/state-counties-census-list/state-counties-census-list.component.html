@@ -1,0 +1,104 @@
+<div style="text-align: center;">
+  <h2>{{stateData.stateName}}</h2>
+</div>
+<div class="box">
+  <div class="column">
+    <app-svg-state-counties></app-svg-state-counties>
+  </div>
+  <div class="row">
+    <div class="column">
+      <span style="
+          float: right;
+          right: 0px;
+          width: 220px;
+        ">
+        <mat-form-field>
+          <mat-label style="padding-right: 5px;">Filter</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Ex: Iowa" />
+        </mat-form-field>
+      </span>
+      <!--         <span style="float: left;">
+          <mat-paginator [pageSizeOptions]="[10, 25, 50]" showFirstLastButtons>
+          </mat-paginator>
+        </span> -->
+      <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Num</th>
+          <td mat-cell *matCellDef="let i = index">{{ i + 1 }}</td>
+        </ng-container>
+        <ng-container matColumnDef="countyName">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>County Name</th>
+          <td mat-cell *matCellDef="let countyData">
+            {{ countyData.countyName.replace(' County','') }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="numberOfCities">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Cities</th>
+          <td mat-cell *matCellDef="let countyData">
+            {{ countyData.numberOfCities }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="landAreaSqMi">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: right;">
+            Area (Sq Mi)
+          </th>
+          <td mat-cell *matCellDef="let countyData" style="text-align: right; padding: 0px 8px;">
+            {{ countyData.landAreaSqMi | number: "1.0":"en-US" }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="populationEstimate2019">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: right;">
+            2019 Pop
+          </th>
+          <td mat-cell *matCellDef="let countyData" style="text-align: right; padding: 0px 8px;">
+            {{ countyData.populationEstimate2019 | number: "1.0":"en-US" }}
+          </td>
+        </ng-container>
+        <!--
+                <ng-container matColumnDef="totalMigration2019">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: right;">
+            2019 Migration
+          </th>
+          <td mat-cell *matCellDef="let countyData" style="text-align: right; padding: 0px 8px;">
+            {{ countyData.totalMigration2019 | number: "1.0":"en-US" }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="domesticMigration2019">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: right;">
+            2019 Domestic Migration
+          </th>
+          <td mat-cell *matCellDef="let countyData" style="text-align: right; padding: 0px 8px;">
+            {{ countyData.domesticMigration2019 | number: "1.0":"en-US" }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="internationalMigration2019">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: right;">
+            2019 International Migration
+          </th>
+          <td mat-cell *matCellDef="let countyData" style="text-align: right; padding: 0px 8px;">
+            {{ countyData.internationalMigration2019 | number: "1.0":"en-US" }}
+          </td>
+        </ng-container>
+        -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns; let countyData" (mouseenter)="applyHover(countyData.stateCountyFipsCode)" (mouseleave)="removeHover(countyData.stateCountyFipsCode)" [ngStyle]="{'background-color': countyData.fillColor}"></tr>
+      </table>
+      <div>
+        <span style="
+            float: right;
+            right: 0px;
+            width: 220px;
+          ">
+          <mat-form-field>
+            <mat-label style="padding-right: 5px;">Filter</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Ex: Iowa" />
+          </mat-form-field>
+        </span>
+        <span style="float: left;">
+          <mat-paginator [pageSizeOptions]="[10, 25, 100]" showFirstLastButtons>
+          </mat-paginator>
+        </span>
+      </div>
+    </div>
+  </div>
