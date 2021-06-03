@@ -1,1 +1,31 @@
-<p>svg-state-counties works!</p>
+<svg [attr.viewBox]="[(stateSvgData.viewBoxX-5) +' '+(stateSvgData.viewBoxY-5) +' '+(stateSvgData.viewBoxWidth+10) +' '+(stateSvgData.viewBoxHeight+10)]" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+  <title>{{stateCensusData.stateName}}</title>
+  <defs>
+    <style id="style6">
+      #counties {
+        fill: #d0d0d0;
+        stroke: #000;
+        stroke-width: .17829;
+      }
+
+      #borders {
+        fill: none;
+
+        stroke: #221e1f;
+        stroke-width: .89143;
+      }
+
+      #separator {
+        fill: none;
+        stroke: #a9a9a9;
+        stroke-width: 2.3177309;
+      }
+    </style>
+  </defs>
+
+  <g [id]="'st_'+[stateSvgData.stateFipsCode]" style="fill:#e0e0e0;stroke:#777777;stroke-width:0.17828999">
+    <path class="county-class" *ngFor="let county of countiesSvgData" [id]="[county.pathId]" [attr.d]="[county.pathDdata]" [attr.style]="[county.pathStyle]" [attr.fill]="[county.fillColor]" (mouseenter)="applyHover(county.stateCountyFipsCode)" (mouseleave)="removeHover(county.stateCountyFipsCode)">
+      <title [id]="[county.pathTitleTagId]">{{county.pathTitleTag}}</title>
+    </path>
+  </g>
+</svg>
