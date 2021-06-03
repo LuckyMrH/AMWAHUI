@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PageNotFoundComponent } from './page-not-found.component';
+import { SvgStateCountiesComponent } from './svg-state-counties.component';
 
-describe('PageNotFoundComponent', () => {
-  let component: PageNotFoundComponent;
-  let fixture: ComponentFixture<PageNotFoundComponent>;
+describe('SvgStateCountiesComponent', () => {
+  let component: SvgStateCountiesComponent;
+  let fixture: ComponentFixture<SvgStateCountiesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PageNotFoundComponent ]
+      declarations: [ SvgStateCountiesComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PageNotFoundComponent);
+    fixture = TestBed.createComponent(SvgStateCountiesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

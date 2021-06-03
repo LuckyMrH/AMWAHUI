@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { StateCountiesCensusListComponent } from './components/state/state-counties-census-list/state-counties-census-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,6 +15,7 @@ import { StateCountiesCensusListComponent } from './components/state/state-count
   imports: [
     BrowserModule,
     HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]

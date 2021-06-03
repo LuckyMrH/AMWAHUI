@@ -31,16 +31,16 @@ import { switchMap } from 'rxjs/operators';
   providers: [HoverService],
 })
 export class StateCountiesCensusListComponent implements OnInit, AfterViewInit, OnDestroy {
-  displayedColumns: string[];
+  displayedColumns! : string[];
   dataSource = new MatTableDataSource<StateCountyandCityCensusData>();
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator! : MatPaginator;
+  @ViewChild(MatSort) sort! : MatSort;
   subscription: Subscription;
 
-  screenHeight: number;
-  screenWidth: number;
-  stateFipsCode: string;
-  stateData: StateCensusData;
+  screenHeight! : number;
+  screenWidth! : number;
+  stateFipsCode! : string;
+  stateData! : StateCensusData;
 
   public backgroundColor = '#dfdfdf';
   public hoverColor = 'lightsteelblue';
@@ -63,7 +63,7 @@ export class StateCountiesCensusListComponent implements OnInit, AfterViewInit, 
     );
   }
   @HostListener('window:resize', ['$event'])
-  getScreenSize(event?) {
+  getScreenSize(event?: Event) {
     this.screenHeight = window.innerHeight;
     this.screenWidth = window.innerWidth;
   }
@@ -73,7 +73,7 @@ export class StateCountiesCensusListComponent implements OnInit, AfterViewInit, 
       //'stateCountyFipsCode',
       // stateFipsCode: string;
       // countyFipsCode: string;
-      //'stateName',
+      'stateName',
       //'statePostalCode',
       'position',
       'countyName',
