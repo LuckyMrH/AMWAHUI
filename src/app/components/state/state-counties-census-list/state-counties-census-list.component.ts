@@ -31,6 +31,7 @@ import { switchMap } from 'rxjs/operators';
     providers: [HoverService],
 })
 export class StateCountiesCensusListComponent implements OnInit, AfterViewInit, OnDestroy {
+<<<<<<< HEAD
     displayedColumns: string[] = [];
     dataSource = new MatTableDataSource<StateCountyandCityCensusData>();
     @ViewChild(MatPaginator) paginator? : MatPaginator;
@@ -44,6 +45,18 @@ export class StateCountiesCensusListComponent implements OnInit, AfterViewInit, 
     sfCode? : string;
     public backgroundColor = '#dfdfdf';
     public hoverColor = 'lightsteelblue';
+=======
+  displayedColumns! : string[];
+  dataSource = new MatTableDataSource<StateCountyandCityCensusData>();
+  @ViewChild(MatPaginator) paginator! : MatPaginator;
+  @ViewChild(MatSort) sort! : MatSort;
+  subscription: Subscription;
+
+  screenHeight! : number;
+  screenWidth! : number;
+  stateFipsCode! : string;
+  stateData! : StateCensusData;
+>>>>>>> bb7c04942761fd86ff04c5b4cf30c35f44863f1c
 
     constructor(
         private dataService: StateCensusDataService,
@@ -84,6 +97,7 @@ export class StateCountiesCensusListComponent implements OnInit, AfterViewInit, 
             //'internationalMigration2019',
             //'totalMigration2019',
 
+<<<<<<< HEAD
         ];
         this.sfCode = this.route.snapshot.paramMap.get('stateFipsCode');
         this.stateFipsCode = this.sfCode;
@@ -97,6 +111,35 @@ export class StateCountiesCensusListComponent implements OnInit, AfterViewInit, 
             this.dataSource.data = data;
         });
     }
+=======
+            this.dataSource.data[cnt].fillColor = msg.colorCode;
+          }
+        }
+      }
+    );
+  }
+  @HostListener('window:resize', ['$event'])
+  getScreenSize(event?: Event) {
+    this.screenHeight = window.innerHeight;
+    this.screenWidth = window.innerWidth;
+  }
+  ngOnInit(): void {
+    this.displayedColumns = [
+      // id: number;
+      //'stateCountyFipsCode',
+      // stateFipsCode: string;
+      // countyFipsCode: string;
+      'stateName',
+      //'statePostalCode',
+      'position',
+      'countyName',
+      'numberOfCities',
+      'landAreaSqMi',
+      'populationEstimate2019',
+      //'domesticMigration2019',
+      //'internationalMigration2019',
+      //'totalMigration2019',
+>>>>>>> bb7c04942761fd86ff04c5b4cf30c35f44863f1c
 
     applyHover(stateCountyFipsCode: string) {
         this.hoverService.announceListChanged(stateCountyFipsCode, this.hoverColor);
