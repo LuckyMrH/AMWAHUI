@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-import { Component, OnInit } from '@angular/core';
 
-@Component({
-  selector: 'svg-state-counties',
-=======
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {
@@ -17,22 +12,13 @@ import { HoverService, HoverMessage } from 'src/app/services/hover.service';
 import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-svg-state-counties',
->>>>>>> bb7c04942761fd86ff04c5b4cf30c35f44863f1c
   templateUrl: './svg-state-counties.component.html',
   styleUrls: ['./svg-state-counties.component.css']
 })
 export class SvgStateCountiesComponent implements OnInit {
-<<<<<<< HEAD
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-=======
   countiesSvgData: CountySVGdata[] = [];
   stateSvgData: StateSVGdata;
-  stateCensusData: StateCensusData;
+stateCensusData: StateCensusData;
   subscription: Subscription
   stateFipsCode: string = '';
   public backgroundColor = '';
@@ -91,5 +77,4 @@ export class SvgStateCountiesComponent implements OnInit {
     //this.dataService.loadStateCountySVGdata(this.stateFipsCode);
     // console.log('The state name is:' + this.stateData.stateName + ", the FIPS code is:" + this.stateData.stateFipsCode);
   }
->>>>>>> bb7c04942761fd86ff04c5b4cf30c35f44863f1c
 }

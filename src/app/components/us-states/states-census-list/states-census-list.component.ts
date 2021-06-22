@@ -19,12 +19,14 @@ import {
   HoverMessage,
 } from 'src/app/services/hover.service';
 import { Subscription } from 'rxjs';
+
 @Component({
   selector: 'app-states-census-list',
   templateUrl: './states-census-list.component.html',
   styleUrls: ['./states-census-list.component.css'],
   providers: [HoverService]
 })
+
 export class StatesCensusListComponent
   implements OnInit, AfterViewInit, OnDestroy {
 
