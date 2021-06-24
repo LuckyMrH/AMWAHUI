@@ -35,7 +35,7 @@ export class StateCountiesCensusListComponent implements OnInit, AfterViewInit, 
     dataSource = new MatTableDataSource<StateCountyandCityCensusData>()!;
     @ViewChild(MatPaginator) paginator? : MatPaginator;
     @ViewChild(MatSort) sort? : MatSort;
-    subscription: Subscription;
+    subscription? : Subscription;
 
     screenHeight? : number;
     screenWidth? : number;
@@ -106,8 +106,8 @@ export class StateCountiesCensusListComponent implements OnInit, AfterViewInit, 
         this.hoverService.announceListChanged(stateCountyFipsCode, this.backgroundColor);
     }
     ngAfterViewInit() {
-        this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator!;
+        this.dataSource.sort = this.sort!;
     }
 
     applyFilter(event: Event) {

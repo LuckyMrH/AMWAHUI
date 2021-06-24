@@ -17,9 +17,9 @@ import { Subscription } from 'rxjs';
 })
 export class SvgStateCountiesComponent implements OnInit {
   countiesSvgData: CountySVGdata[] = [];
-  stateSvgData: StateSVGdata;
-stateCensusData: StateCensusData;
-  subscription: Subscription
+  stateSvgData!: StateSVGdata;
+stateCensusData!: StateCensusData;
+  subscription!: Subscription
   stateFipsCode: string = '';
   public backgroundColor = '';
   public hoverColor = 'lightsteelblue';

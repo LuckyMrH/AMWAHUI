@@ -49,7 +49,7 @@ export class StatesCensusListComponent
     private hoverService: HoverService,
     private router: Router,
   ) {
-    this.getScreenSize(evebt? : Event);
+    this.getScreenSize(event? : Event);
 
     this.subscription = hoverService.mapChanged$.subscribe(
       (msg: HoverMessage) => {
@@ -99,8 +99,8 @@ export class StatesCensusListComponent
     this.hoverService.announceListChanged(stateFipsCode, this.backgroundColor);
   }
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator!;
+    this.dataSource.sort = this.sort!;
   }
 
   applyFilter(event: Event) {
