@@ -1,3 +1,4 @@
+
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {
@@ -15,6 +16,7 @@ import { Subscription } from 'rxjs';
     styleUrls: ['./svg-state-counties.component.css']
 })
 export class SvgStateCountiesComponent implements OnInit {
+<<<<<<< HEAD
     countiesSvgData: CountySVGdata[] = [];
     stateSvgData!: StateSVGdata;
     stateCensusData!: StateCensusData;
@@ -22,6 +24,15 @@ export class SvgStateCountiesComponent implements OnInit {
     stateFipsCode!: string | null;
     public backgroundColor = '';
     public hoverColor = 'lightsteelblue';
+=======
+  countiesSvgData: CountySVGdata[] = [];
+  stateSvgData!: StateSVGdata;
+stateCensusData!: StateCensusData;
+  subscription!: Subscription
+  stateFipsCode: string = '';
+  public backgroundColor = '';
+  public hoverColor = 'lightsteelblue';
+>>>>>>> 10b2fbbe2bc28153e4702985772b37c47efa0bde
 
     constructor(
         private dataService: StateCensusDataService,

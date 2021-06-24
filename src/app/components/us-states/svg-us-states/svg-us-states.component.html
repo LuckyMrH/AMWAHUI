@@ -1,0 +1,28 @@
+<svg viewBox="0 0 959 593">
+  <title>US States</title>
+  <defs />
+  <style type="text/css">
+    .state {
+      fill: #dfdfdf;
+    }
+
+    /*
+            The .state class sets the default fill color for all states.
+            Individual states (such as Kansas, Montana, Pennsylvania) can be colored as follows:
+            #KS, #MT, #PA {fill:#0000FF;}
+            Place this code in the empty space below.
+            */
+  </style>
+  <g class="state">
+    <path class="state-class" *ngFor="let state of statesSvgDataExceptDC()" [id]="[state.stateFipsCode]" [attr.d]="[state.pathD]" [attr.fill]="[state.fillColor]" (click)="goToState(state.stateFipsCode)" (mouseenter)="applyHover(state.stateFipsCode)" (mouseleave)="removeHover(state.stateFipsCode); ">
+      <title>{{ state.stateName }}</title>
+    </path>
+  </g>
+  <g id="DC1">
+    <title>District of Columbia</title>
+    <path *ngFor="let state of statesSvgDataForDC()" [id]="state.stateFipsCode" [attr.fill]="[state.fillColor]" [attr.d]="[state.pathD]">
+      <circle *ngFor="let state of statesSvgDataForDC()" [id]="state.stateFipsCode" stroke="#FFFFFF" stroke-width="1.5" cx="801.3" cy="251.8" r="5" opacity="1" [attr.fill]="[state.fillColor]" (click)="goToState(state.stateFipsCode)" (mouseenter)="applyHover(state.stateFipsCode)" (mouseleave)="removeHover(state.stateFipsCode)" />
+    </path>
+    <!-- Set opacity to "0" to hide DC circle -->
+  </g>
+</svg>
