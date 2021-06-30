@@ -10,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Directive, ElementRef, HostListener } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
+import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import {
     StateCensusDataService,
@@ -25,7 +26,7 @@ import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
 @Component({
-    selector: 'app-state-counties-census-list',
+    selector: 'state-counties-census-list',
     templateUrl: './state-counties-census-list.component.html',
     styleUrls: ['./state-counties-census-list.component.css'],
     providers: [HoverService],
