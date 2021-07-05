@@ -49,7 +49,7 @@ export class StateCountiesCensusListComponent implements OnInit, AfterViewInit, 
     constructor(
         private dataService: StateCensusDataService,
         private hoverService: HoverService,
-        private route: ActivatedRoute,
+        //private route: ActivatedRoute,
     ) {
         this.getScreenSize();
         this.subscription = hoverService.mapChanged$.subscribe(

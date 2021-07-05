@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router'
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { StateCountiesCensusListComponent } from './components/state/state-counties-census-list/state-counties-census-list.component';
@@ -25,6 +26,7 @@ import { SvgUsCountiesComponent } from './components/us-counties/svg-us-counties
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot(routes)
     HttpClientModule,
     BrowserAnimationsModule,
     MatPaginatorModule
@@ -33,4 +35,6 @@ import { SvgUsCountiesComponent } from './components/us-counties/svg-us-counties
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
-export class AppModule { }
+export class AppModule {;
+  const routes: Routes = []
+ }

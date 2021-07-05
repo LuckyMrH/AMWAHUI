@@ -16,9 +16,10 @@ describe('SvgStateCountiesComponent', () => {
   let hoverService: HoverService;
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule,
-        RouterTestingModule.withRoutes([])],
-      // declarations: [SvgStateCountiesComponent],
+      imports: [HttpClientTestingModule
+      //  RouterTestingModule.withRoutes([])],
+      // declarations: [SvgStateCountiesComponent
+      ],
       providers: [HoverService,
         SvgStateCountiesComponent,
         HoverService]
