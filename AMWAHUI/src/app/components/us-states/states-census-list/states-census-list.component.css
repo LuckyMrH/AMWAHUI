@@ -1,0 +1,36 @@
+.mat-row:hover {
+  background-color: lightsteelblue;
+}
+
+mat-form-field.mat-form-field {
+  font-size: 12px;
+  padding: 0;
+  margin-left: 10px;
+}
+
+tr.mat-row {
+  height: 26px;
+}
+
+.box {
+  display: flex;
+  flex-wrap: wrap;
+}
+.box > * {
+  flex: 1 1;
+  margin: 10px;
+}
+.row {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+  width: 45%;
+}

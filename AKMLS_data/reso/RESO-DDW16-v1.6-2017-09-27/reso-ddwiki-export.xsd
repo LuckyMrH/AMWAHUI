@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+         <!-- XML Schema Generated from XML Document on Sun Oct 15 2017 15:46:59 GMT-0500 (Central Standard Time) -->
+         <!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
+         <xs:element name="reso-ddwiki-export">
+               <xs:complexType>
+                     <xs:sequence>
+                           <xs:element name="Resource" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                       <xs:sequence>
+                                             <xs:element name="Field" maxOccurs="unbounded">
+                                                   <xs:complexType>
+                                                         <xs:sequence>
+                                                               <xs:element name="StandardName" type="xs:string"></xs:element>
+                                                               <xs:element name="Definition" type="xs:string"></xs:element>
+                                                               <xs:element name="Groups">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="Group" maxOccurs="unbounded" type="xs:string"></xs:element>
+                                                                           </xs:sequence>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                               <xs:element name="SimpleDataType" type="xs:string"></xs:element>
+                                                               <xs:element name="SugMaxLength" type="xs:int"></xs:element>
+                                                               <xs:element name="Synonym"></xs:element>
+                                                               <xs:element name="ElementStatus" type="xs:string"></xs:element>
+                                                               <xs:element name="BEDES" type="xs:string"></xs:element>
+                                                               <xs:element name="CertificationLevel" type="xs:string"></xs:element>
+                                                               <xs:element name="RecordID" type="xs:int"></xs:element>
+                                                               <xs:element name="LookupStatus" type="xs:string"></xs:element>
+                                                               <xs:element name="Lookup" type="xs:string"></xs:element>
+                                                               <xs:element name="Collection" type="xs:string"></xs:element>
+                                                               <xs:element name="SugMaxPrecision" type="xs:int"></xs:element>
+                                                               <xs:element name="RepeatingElement" type="xs:string"></xs:element>
+                                                               <xs:element name="PropertyTypes">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="Class" maxOccurs="unbounded" type="xs:string"></xs:element>
+                                                                           </xs:sequence>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                               <xs:element name="Payloads"></xs:element>
+                                                               <xs:element name="StatusChangeDate" type="xs:string"></xs:element>
+                                                               <xs:element name="RevisedDate" type="xs:string"></xs:element>
+                                                               <xs:element name="AddedInVersion"></xs:element>
+                                                               <xs:element name="ModificationTimestamp" type="xs:string"></xs:element>
+                                                         </xs:sequence>
+                                                         <xs:attribute name="PageForm" type="xs:string"></xs:attribute>
+                                                         <xs:attribute name="WikiPageID" type="xs:int"></xs:attribute>
+                                                         <xs:attribute name="WikiPageTitle" type="xs:string"></xs:attribute>
+                                                         <xs:attribute name="WikiPageURL" type="xs:string"></xs:attribute>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                       </xs:sequence>
+                                       <xs:attribute name="PageForm" type="xs:string"></xs:attribute>
+                                       <xs:attribute name="RootType" type="xs:string"></xs:attribute>
+                                       <xs:attribute name="WikiPageID" type="xs:int"></xs:attribute>
+                                       <xs:attribute name="WikiPageTitle" type="xs:string"></xs:attribute>
+                                       <xs:attribute name="WikiPageURL" type="xs:string"></xs:attribute>
+                                 </xs:complexType>
+                           </xs:element>
+                           <xs:element name="LookupValues">
+                                 <xs:complexType>
+                                       <xs:sequence>
+                                             <xs:element name="LookupField" maxOccurs="unbounded">
+                                                   <xs:complexType>
+                                                         <xs:sequence>
+                                                               <xs:element name="LookupValue" maxOccurs="unbounded">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="LookupValue" type="xs:string"></xs:element>
+                                                                                 <xs:element name="LookupField" type="xs:string"></xs:element>
+                                                                                 <xs:element name="Definition" type="xs:string"></xs:element>
+                                                                                 <xs:element name="Synonym"></xs:element>
+                                                                                 <xs:element name="BEDES"></xs:element>
+                                                                                 <xs:element name="References">
+                                                                                       <xs:complexType>
+                                                                                             <xs:sequence>
+                                                                                                   <xs:element name="Reference" maxOccurs="unbounded" type="xs:string"></xs:element>
+                                                                                             </xs:sequence>
+                                                                                       </xs:complexType>
+                                                                                 </xs:element>
+                                                                                 <xs:element name="LookupStatus" type="xs:string"></xs:element>
+                                                                                 <xs:element name="LookupID" type="xs:int"></xs:element>
+                                                                                 <xs:element name="LookupFieldID" type="xs:int"></xs:element>
+                                                                                 <xs:element name="StatusChangeDate" type="xs:string"></xs:element>
+                                                                                 <xs:element name="RevisedDate" type="xs:string"></xs:element>
+                                                                                 <xs:element name="AddedInVersion" type="xs:string"></xs:element>
+                                                                                 <xs:element name="ModificationTimestamp" type="xs:string"></xs:element>
+                                                                           </xs:sequence>
+                                                                           <xs:attribute name="PageForm" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="WikiPageID" type="xs:int"></xs:attribute>
+                                                                           <xs:attribute name="WikiPageTitle" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="WikiPageURL" type="xs:string"></xs:attribute>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                         </xs:sequence>
+                                                         <xs:attribute name="PageForm" type="xs:string"></xs:attribute>
+                                                         <xs:attribute name="WikiPageID" type="xs:int"></xs:attribute>
+                                                         <xs:attribute name="WikiPageTitle" type="xs:string"></xs:attribute>
+                                                         <xs:attribute name="WikiPageURL" type="xs:string"></xs:attribute>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                       </xs:sequence>
+                                       <xs:attribute name="PageForm" type="xs:string"></xs:attribute>
+                                       <xs:attribute name="RootType" type="xs:string"></xs:attribute>
+                                       <xs:attribute name="WikiPageID" type="xs:int"></xs:attribute>
+                                       <xs:attribute name="WikiPageTitle" type="xs:string"></xs:attribute>
+                                       <xs:attribute name="WikiPageURL" type="xs:string"></xs:attribute>
+                                 </xs:complexType>
+                           </xs:element>
+                     </xs:sequence>
+                     <xs:attribute name="XMLFormatVersion" type="xs:double"></xs:attribute>
+                     <xs:attribute name="XMLCreateDate" type="xs:string"></xs:attribute>
+                     <xs:attribute name="TimeZone" type="xs:string"></xs:attribute>
+                     <xs:attribute name="WikiSource" type="xs:string"></xs:attribute>
+                     <xs:attribute name="WikiKey" type="xs:string"></xs:attribute>
+                     <xs:attribute name="Copyright" type="xs:string"></xs:attribute>
+                     <xs:attribute name="DDWikiVersion" type="xs:double"></xs:attribute>
+               </xs:complexType>
+         </xs:element>
+   </xs:schema>
