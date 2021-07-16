@@ -14,6 +14,13 @@ import { UsCountiesCensusListComponent } from './components/us-counties/us-count
 import { SvgUsStatesComponent } from './components/us-states/svg-us-states/svg-us-states.component';
 import { SvgUsCountiesComponent } from './components/us-counties/svg-us-counties/svg-us-counties.component';
 @NgModule({
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(routes)
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatPaginatorModule
+  ],
   declarations: [
     AppComponent,
     PageNotFoundComponent,
@@ -23,13 +30,6 @@ import { SvgUsCountiesComponent } from './components/us-counties/svg-us-counties
     SvgUsStatesComponent,
     SvgUsCountiesComponent,
     UsCountiesCensusListComponent
-  ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(routes)
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatPaginatorModule
   ],
   providers: [HttpClientModule]
   bootstrap: [AppComponent],
