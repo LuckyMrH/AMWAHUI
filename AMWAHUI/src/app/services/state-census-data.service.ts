@@ -11,6 +11,8 @@ export class StateCensusDataService {
   private countiesSVGdataURI = 'http://localhost:8080/svg/us_counties';
   private countySVGdataURI = 'http://localhost:8080/svg/state_counties';
   private stateCountyDataURI = 'http://localhost:8080/census/county_data';
+  
+
 
   private _statesCensusData = new BehaviorSubject<StateCensusData[]>([]);
   private _countiesCensusData = new BehaviorSubject<CountyCensusData[]>([]);
@@ -48,14 +50,9 @@ export class StateCensusDataService {
     this.loadAllStateCensusData();
   }
 
-  // private statesCensusDataURI = 'http://localhost:8080/census/states';
-  // private countiesCensusDataURI = 'http://localhost:8080/census/counties';
-  // private statesSVGdataURI = 'http://localhost:8080/svg/us_states';
-  // private countiesSVGdataURI = 'http://localhost:8080/svg/us_counties';
-
 
   loadStateCountyandCityCensusData(stateFipsCode: string) {
-    // private stateCountyDataURI = 'http://localhost:8080/census/county_data';
+    private stateCountyDataURI = 'http://localhost:8080/census/county_data';
     const url = `${this.stateCountyDataURI}/${stateFipsCode}`;
     this.httpClient.get<StateCountyandCityCensusData[]>(url).subscribe(
       (data) => {
@@ -69,7 +66,7 @@ export class StateCensusDataService {
   }
 
   loadStateCountySVGdata(stateFipsCode: string) {
-    // private countySVGdataURI = 'http://localhost:8080/svg/state_counties';
+    private countySVGdataURI = 'http://localhost:8080/svg/state_counties';
     const url = `${this.countySVGdataURI}/${stateFipsCode}`;
     this.httpClient.get<CountySVGdata[]>(url).subscribe(
       (data) => {
