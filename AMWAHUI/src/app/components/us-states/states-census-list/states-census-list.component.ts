@@ -24,7 +24,7 @@ import { Subscription } from 'rxjs';
   selector: 'app-states-census-list',
   templateUrl: './states-census-list.component.html',
   styleUrls: ['./states-census-list.component.css'],
-  providers: [HoverService]
+  providers: [HoverService],
 })
 
 export class StatesCensusListComponent

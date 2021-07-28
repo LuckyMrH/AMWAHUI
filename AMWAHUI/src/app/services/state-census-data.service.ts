@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -12,13 +13,20 @@ export class StateCensusDataService {
   private countySVGdataURI = 'http://localhost:8080/svg/state_counties';
   private stateCountyDataURI = 'http://localhost:8080/census/county_data';
   
-
+    
 
   private _statesCensusData = new BehaviorSubject<StateCensusData[]>([]);
   private _countiesCensusData = new BehaviorSubject<CountyCensusData[]>([]);
   private _stateCountyandCityCensusData = new BehaviorSubject<StateCountyandCityCensusData[]>([]);
   private _statesSVGdata = new BehaviorSubject<StateSVGdata[]>([]);
   private _countiesSVGdata = new BehaviorSubject<CountySVGdata[]>([]);
+
+  readonly stateCountyandCityCensusData = this._stateCountyandCityCensusData.asObservable();
+  readonly statesCensusData = this._statesCensusData.asObservable();
+  readonly countiesCensusData = this._countiesCensusData.asObservable();
+  readonly statesSVGdata = this._statesSVGdata.asObservable();
+  readonly countiesSVGdata = this._countiesSVGdata.asObservable();
+
 
   private stateCountyandCityCensusDataStore: { stateCountyandCityCensusData: StateCountyandCityCensusData[] } = {
     stateCountyandCityCensusData: [],
@@ -37,12 +45,6 @@ export class StateCensusDataService {
     countieSVGdata: [],
   };
 
-  readonly stateCountyandCityCensusData = this._stateCountyandCityCensusData.asObservable();
-  readonly statesCensusData = this._statesCensusData.asObservable();
-  readonly countiesCensusData = this._countiesCensusData.asObservable();
-  readonly statesSVGdata = this._statesSVGdata.asObservable();
-  readonly countiesSVGdata = this._countiesSVGdata.asObservable();
-
   constructor(private httpClient: HttpClient) {
     this.loadAllCountiesSVGdata();
     this.loadAllStatesSVGdata();
@@ -52,7 +54,7 @@ export class StateCensusDataService {
 
 
   loadStateCountyandCityCensusData(stateFipsCode: string) {
-    private stateCountyDataURI = 'http://localhost:8080/census/county_data';
+    //private stateCountyDataURI = 'http://localhost:8080/census/county_data';
     const url = `${this.stateCountyDataURI}/${stateFipsCode}`;
     this.httpClient.get<StateCountyandCityCensusData[]>(url).subscribe(
       (data) => {
@@ -66,7 +68,6 @@ export class StateCensusDataService {
   }
 
   loadStateCountySVGdata(stateFipsCode: string) {
-    private countySVGdataURI = 'http://localhost:8080/svg/state_counties';
     const url = `${this.countySVGdataURI}/${stateFipsCode}`;
     this.httpClient.get<CountySVGdata[]>(url).subscribe(
       (data) => {

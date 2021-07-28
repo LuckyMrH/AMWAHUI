@@ -13,10 +13,11 @@ import { StatesCensusListComponent } from './components/us-states/states-census-
 import { UsCountiesCensusListComponent } from './components/us-counties/us-counties-census-list/us-counties-census-list.component';
 import { SvgUsStatesComponent } from './components/us-states/svg-us-states/svg-us-states.component';
 import { SvgUsCountiesComponent } from './components/us-counties/svg-us-counties/svg-us-counties.component';
+import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
     MatPaginatorModule
@@ -31,10 +32,9 @@ import { SvgUsCountiesComponent } from './components/us-counties/svg-us-counties
     SvgUsCountiesComponent,
     UsCountiesCensusListComponent
   ],
-  providers: [HttpClientModule]
+  providers: [HttpClientModule],
   bootstrap: [AppComponent],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
-export class AppModule {;
-  const routes: Routes = []
+export class AppModule {
+  //const routes: Routes = [];
  }

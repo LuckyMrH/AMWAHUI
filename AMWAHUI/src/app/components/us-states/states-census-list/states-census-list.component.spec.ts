@@ -23,7 +23,7 @@ describe('StatesCensusListComponent', () => {
       declarations: [StatesCensusListComponent],
       imports: [HttpClientTestingModule,
         RouterTestingModule.withRoutes([]),],
-      // providers: [StatesListComponent, { provide: StatesCensusDataService }],
+       providers: [ { provide: StateCensusDataService, useClass: StatesCensusListComponent }],
     }).compileComponents();
   }));
 

@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { SvgUsStatesComponent } from './components/us-states/svg-us-states/svg-us-states.component';
 import {
-  StateCensusDataService,
   StateCensusData,
   StateCountyandCityCensusData,
 } from 'src/app/services/state-census-data.service';
-const routes: Routes = [
-  {
 
-  }
+const routes: Routes = [
+{ path: 'states-component', component: SvgUsStatesComponent }
 ];
 
 @NgModule({
