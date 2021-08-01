@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
-@Injectable()
+@Injectable({ providedIn: 'root',})
 export class HoverService {
   // Observable string sources
   // sent when the hover has changed
   private listChangedSource = new Subject<HoverMessage>();
-  private mapChangedSource = new Subject<HoverMessage>(); //<string[]>();
+  private mapChangedSource = new Subject<HoverMessage>(); //<string[]>(); 
 
   // Observable string streams
   listChanged$ = this.listChangedSource.asObservable();

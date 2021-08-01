@@ -50,7 +50,7 @@ export class SvgUsCountiesComponent implements OnInit {
         this.countiesSvgData = data;
       });
 
-      // this.dataService.loadAllCountiesSVGdata();
+      this.dataService.loadAllCountiesSVGdata();
     }
 
   }

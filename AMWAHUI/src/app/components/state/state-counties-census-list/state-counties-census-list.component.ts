@@ -11,12 +11,14 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatFormField } from '@angular/material/form-field';
 import { MatSort } from '@angular/material/sort';
 import {
     StateCensusDataService,
     StateCensusData,
     StateCountyandCityCensusData,
 } from 'src/app/services/state-census-data.service';
+import { SvgStateCountiesComponent } from '../svg-state-counties/svg-state-counties.component';
 import {
     HoverService,
     HoverMessage,
@@ -40,7 +42,7 @@ export class StateCountiesCensusListComponent implements OnInit, AfterViewInit, 
 
     screenHeight!: number;
     screenWidth!: number;
-    stateFipsCode = '19175';
+    stateFipsCode: any;
     stateData!: StateCensusData;
 
     public backgroundColor = '#dfdfdf';
@@ -85,8 +87,7 @@ export class StateCountiesCensusListComponent implements OnInit, AfterViewInit, 
             //'totalMigration2019',
 
         ];
-        this.stateFipsCode = '19175';
-        ///this.stateFipsCode = this.route.snapshot.paramMap.get('stateFipsCode');
+        this.stateFipsCode = this.route.snapshot.paramMap.get('stateFipsCode');
         console.log('We are going to load the state for - ' + this.stateFipsCode);
         this.dataService.statesCensusData.subscribe((statesdata) => {
             this.stateData = statesdata.filter((s) => s.stateFipsCode === this.stateFipsCode)[0];

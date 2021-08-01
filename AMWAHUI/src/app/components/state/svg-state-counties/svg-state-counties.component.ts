@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 import { HoverService, HoverMessage } from 'src/app/services/hover.service';
 import { Subscription } from 'rxjs';
 @Component({
-    selector: 'app-svg-state-counties',
+    selector: 'svg-state-counties',
     templateUrl: './svg-state-counties.component.html',
     styleUrls: ['./svg-state-counties.component.css']
 })
@@ -20,7 +20,8 @@ export class SvgStateCountiesComponent implements OnInit {
     stateSvgData!: StateSVGdata;
     stateCensusData!: StateCensusData;
     subscription!: Subscription
-    stateFipsCode = '19175';
+    //stateFipsCode = '19175';
+    stateFipsCode: any;
     public backgroundColor = '';
     public hoverColor = 'lightsteelblue';
 
@@ -52,8 +53,8 @@ export class SvgStateCountiesComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        //this.stateFipsCode = this.route.snapshot.paramMap.get('stateFipsCode');
-        this.stateFipsCode = '19175';
+        this.stateFipsCode = this.route.snapshot.paramMap.get('stateFipsCode');
+        // this.stateFipsCode = '19175';
         console.log('svg-state-counties: going to load the state for - FIPS:' + this.stateFipsCode);
         this.dataService.countiesSVGdata.subscribe((data) => {
           this.countiesSvgData = data;
