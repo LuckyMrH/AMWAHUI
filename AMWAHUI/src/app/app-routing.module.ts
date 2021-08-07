@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, RouterOutlet } from '@angular/router';
 import { SvgUsStatesComponent } from './components/us-states/svg-us-states/svg-us-states.component';
 import { StateCountiesCensusListComponent} from './components/state/state-counties-census-list/state-counties-census-list.component';
 import { UsCountiesCensusListComponent } from './components/us-counties/us-counties-census-list/us-counties-census-list.component';
@@ -12,12 +12,11 @@ const routess: Routes =[
   { path: 'state-counties', component: StateCountiesCensusListComponent }, 
   { path: 'us-counties', component: UsCountiesCensusListComponent },
   { path: 'states-list', component: StatesCensusListComponent },
-
-  {path: '**', component: PageNotFoundComponent}
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routess)],
-  exports: [RouterModule],
+  imports: [RouterModule.forRoot(routess), RouterOutlet],
+  exports: [RouterModule, RouterOutlet],
 })
 export class AppRoutingModule { }

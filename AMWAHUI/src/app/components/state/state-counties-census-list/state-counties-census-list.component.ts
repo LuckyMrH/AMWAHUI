@@ -11,8 +11,8 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import {MatPaginatorModule} from '@angular/material/paginator';
-import { MatFormField
- } from '@angular/material/form-field';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 import { MatSort } from '@angular/material/sort';
 import {
     StateCensusDataService,
