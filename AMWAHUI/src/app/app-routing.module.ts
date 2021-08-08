@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
 import { SvgUsStatesComponent } from './components/us-states/svg-us-states/svg-us-states.component';
 import { StateCountiesCensusListComponent} from './components/state/state-counties-census-list/state-counties-census-list.component';
 import { UsCountiesCensusListComponent } from './components/us-counties/us-counties-census-list/us-counties-census-list.component';
@@ -7,7 +8,7 @@ import { StatesCensusListComponent } from './components/us-states/states-census-
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 
-const routess: Routes =[
+const appRoutes: Routes =[
   { path: 'states-component', component: SvgUsStatesComponent },
   { path: 'state-counties', component: StateCountiesCensusListComponent }, 
   { path: 'us-counties', component: UsCountiesCensusListComponent },
@@ -16,7 +17,13 @@ const routess: Routes =[
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routess), RouterOutlet],
-  exports: [RouterModule, RouterOutlet],
-})
-export class AppRoutingModule { }
+  imports: [
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: false } // <-- debugging purposes only
+    )
+  ],
+  exports: [
+    RouterModule
+  ]
+})export class AppRoutingModule { }

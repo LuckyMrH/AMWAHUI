@@ -46,6 +46,7 @@ export class StateCensusDataService {
   };
 
   constructor(private httpClient: HttpClient) {
+    console.log("Loading Counties SVG data....");
     this.loadAllCountiesSVGdata();
     this.loadAllStatesSVGdata();
     this.loadAllCountyCensusData();

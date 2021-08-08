@@ -25,6 +25,7 @@ import { RouterOutlet } from '@angular/router';
     MatFormFieldModule,
     MatTableModule,
     MatPaginatorModule,
+    AppRoutingModule,
   ],
   declarations: [
     AppComponent,
