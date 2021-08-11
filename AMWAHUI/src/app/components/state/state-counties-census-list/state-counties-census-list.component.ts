@@ -8,10 +8,10 @@ import {
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Directive, ElementRef, HostListener } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
-import { MatPaginator } from '@angular/material/paginator';
-import {MatPaginatorModule} from '@angular/material/paginator';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatTableDataSource } from '@angular/material/table'; 
+import { MatPaginator } from '@angular/material/paginator'; 
+import { MatFormField } from '@angular/material/form-field'; 
 
 import { MatSort } from '@angular/material/sort';
 import {

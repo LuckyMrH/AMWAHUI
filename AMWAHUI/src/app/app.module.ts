@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field'; 
+import { MatLabel } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
@@ -15,6 +16,7 @@ import { UsCountiesCensusListComponent } from './components/us-counties/us-count
 import { SvgUsStatesComponent } from './components/us-states/svg-us-states/svg-us-states.component';
 import { SvgUsCountiesComponent } from './components/us-counties/svg-us-counties/svg-us-counties.component';
 import { RouterOutlet } from '@angular/router';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   imports: [
@@ -22,6 +24,7 @@ import { RouterOutlet } from '@angular/router';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    MatInputModule,
     MatFormFieldModule,
     MatTableModule,
     MatPaginatorModule,
