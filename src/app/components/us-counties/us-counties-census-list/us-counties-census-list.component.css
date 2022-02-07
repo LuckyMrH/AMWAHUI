@@ -1,0 +1,12 @@
+.mat-row:hover {
+  background-color: lightsteelblue;
+}
+
+mat-form-field.mat-form-field {
+  font-size: 12px;
+  padding: 0;
+  margin-left: 10px;
+}
+tr.mat-row {
+  height: 26px;
+}
