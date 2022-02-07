@@ -13,7 +13,11 @@ describe('UsCountiesCensusListComponent', () => {
   let component: UsCountiesCensusListComponent;
   let fixture: ComponentFixture<UsCountiesCensusListComponent>;
   let stateCensusDataService: StateCensusDataService;
+<<<<<<< HEAD
   let httpClient: HttpClient;
+=======
+  // let httpClient: HttpClient;
+>>>>>>> f45e30d164208183ccc675f6c4d5e070727134b8
   let httpTestingController: HttpTestingController;
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
@@ -27,7 +31,11 @@ describe('UsCountiesCensusListComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(UsCountiesCensusListComponent);
     component = fixture.componentInstance;
+<<<<<<< HEAD
     httpClient = TestBed.get(HttpClient);
+=======
+    // httpClient = TestBed.get(HttpClient);
+>>>>>>> f45e30d164208183ccc675f6c4d5e070727134b8
     httpTestingController = TestBed.inject(HttpTestingController);
     stateCensusDataService = TestBed.inject(StateCensusDataService);
 

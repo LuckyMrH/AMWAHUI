@@ -49,7 +49,11 @@ export class StatesCensusListComponent
     private hoverService: HoverService,
     private router: Router,
   ) {
+<<<<<<< HEAD
     this.getScreenSize(event? : Event);
+=======
+    this.getScreenSize();
+>>>>>>> f45e30d164208183ccc675f6c4d5e070727134b8
 
     this.subscription = hoverService.mapChanged$.subscribe(
       (msg: HoverMessage) => {
@@ -64,7 +68,11 @@ export class StatesCensusListComponent
   }
 
   @HostListener('window:resize', ['$event'])
+<<<<<<< HEAD
   getScreenSize(event : Event) {
+=======
+  getScreenSize(event? : Event) {
+>>>>>>> f45e30d164208183ccc675f6c4d5e070727134b8
     this.screenHeight = window.innerHeight;
     this.screenWidth = window.innerWidth;
     console.log("screensize: " + this.screenWidth + ":" + this.screenHeight);
