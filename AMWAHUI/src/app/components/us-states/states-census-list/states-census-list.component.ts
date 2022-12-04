@@ -5,6 +5,8 @@ import {
   AfterViewInit,
   OnDestroy,
 } from '@angular/core';
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Directive, ElementRef, HostListener } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -49,6 +51,7 @@ export class StatesCensusListComponent
     private statesService: StateCensusDataService,
     private hoverService: HoverService,
     private router: Router,
+    private route: ActivatedRoute
   ) {
     this.getScreenSize();
 
@@ -90,8 +93,10 @@ export class StatesCensusListComponent
 
   }
   goToState(stateFipsCode: string) {
-    this.router.navigate(['/state-counties', stateFipsCode]);
+    console.log("We are going to state-counties " + stateFipsCode);
+    this.router.navigate(['/state-counties/' + stateFipsCode]);
   }
+
   applyHover(stateFipsCode: string) {
     this.hoverService.announceListChanged(stateFipsCode, this.hoverColor);
   }

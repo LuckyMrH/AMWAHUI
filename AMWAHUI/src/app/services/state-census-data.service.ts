@@ -48,9 +48,13 @@ export class StateCensusDataService {
   constructor(private httpClient: HttpClient) {
     console.log("Loading Counties SVG data....");
     this.loadAllCountiesSVGdata();
+    console.log("Loading States SVG data....");
     this.loadAllStatesSVGdata();
+    console.log("Loading Counties Census data....");
     this.loadAllCountyCensusData();
+    console.log("Loading State Census data....");
     this.loadAllStateCensusData();
+    console.log("FINISHED LOADING DATA!")
   }
 
 

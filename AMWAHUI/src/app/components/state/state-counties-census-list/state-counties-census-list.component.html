@@ -82,7 +82,7 @@
         </ng-container>
         -->
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns; let countyData" (mouseenter)="applyHover(countyData.stateCountyFipsCode)" (mouseleave)="removeHover(countyData.stateCountyFipsCode)" [ngStyle]="{'background-color': countyData.fillColor}"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns; let countyData"  (mouseenter)="applyHover(countyData.stateCountyFipsCode)" (mouseleave)="removeHover(countyData.stateCountyFipsCode)" [ngStyle]="{'background-color': countyData.fillColor}"></tr>
       </table>
       <div>
         <span style="

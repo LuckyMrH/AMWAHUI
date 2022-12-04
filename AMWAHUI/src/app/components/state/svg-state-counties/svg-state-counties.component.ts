@@ -43,12 +43,12 @@ export class SvgStateCountiesComponent implements OnInit {
 
 
     applyHover(stateCountyFipsCode: string) {
-        console.log('We are over ' + this.stateFipsCode);
+        // console.log('We are over ' + this.stateFipsCode);
         this.hoverService.announceMapChanged(stateCountyFipsCode, this.hoverColor);
     }
 
     removeHover(stateCountyFipsCode: string) {
-        console.log('We are leaving ' + this.stateFipsCode);
+        // console.log('We are leaving ' + this.stateFipsCode);
         this.hoverService.announceMapChanged(stateCountyFipsCode, this.backgroundColor);
     }
 

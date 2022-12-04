@@ -34,7 +34,7 @@ export class SvgUsStatesComponent implements OnInit {
         for (const cnt in this.statesSvgData) {
           if (this.statesSvgData[cnt].stateFipsCode === msg.fipsCode) {
             this.statesSvgData[cnt].fillColor = msg.colorCode;
-            console.log("State SVG: We got a message about:" + msg.fipsCode + " background-color:" + msg.colorCode);
+            // console.log("State SVG: We got a message about:" + msg.fipsCode + " background-color:" + msg.colorCode);
 
           }
         }
@@ -43,12 +43,12 @@ export class SvgUsStatesComponent implements OnInit {
   }
 
   applyHover(stateFipsCode: string) {
-    console.log('State SVG: We are over ' + stateFipsCode);
+    // console.log('State SVG: We are over ' + stateFipsCode);
     this.hoverService.announceMapChanged(stateFipsCode, this.hoverColor);
   }
 
   removeHover(stateFipsCode: string) {
-    console.log('We are leaving ' + stateFipsCode);
+    // console.log('We are leaving ' + stateFipsCode);
     this.hoverService.announceMapChanged(stateFipsCode, this.backgroundColor);
   }
 
@@ -63,7 +63,8 @@ export class SvgUsStatesComponent implements OnInit {
   }
 
   goToState(stateFipsCode: string) {
-    this.router.navigate(['/state-counties', stateFipsCode]);
+    console.log('We are going to ' + stateFipsCode + ' from the MAP');
+    this.router.navigate(['/state-counties/' + stateFipsCode]);
   }
 
   // announceStateHover(stateFipsCode: string) {
