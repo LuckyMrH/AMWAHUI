@@ -104,5 +104,8 @@
       }
     }
   },
-  "defaultProject": "AMWAHUI"
+  "defaultProject": "AMWAHUI",
+  "cli": {
+    "analytics": false
+  }
 }
